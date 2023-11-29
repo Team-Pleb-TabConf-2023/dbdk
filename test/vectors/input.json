@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+      "model": {
+          "type": "string",
+          "enum": ["gpt-3.5-turbo"]
+      },
+      "messages": {
+          "type": "array",
+          "items": {
+              "type": "object",
+              "properties": {
+                  "role": {
+                      "type": "string",
+                      "enum": ["system", "user"]
+                  },
+                  "content": {
+                      "type": "string"
+                  }
+              },
+              "required": ["role", "content"]
+          },
+          "minItems": 1
+      }
+  },
+  "required": ["model", "messages"]
+}

@@ -1,0 +1,65 @@
+{
+  "name": "@cmdcode/dbdk",
+  "description": "Data Buffet Development Kit",
+  "author": "Christopher Scott",
+  "license": "CC-BY-1.0",
+  "keywords": [
+    "nostr",
+    "nip-105",
+    "data buffet"
+  ],
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./dist/main.cjs",
+  "unpkg": "./dist/script.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cmdruid/dbdk.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "files": [
+    "README.md",
+    "LICENSE",
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "./build.sh",
+    "release": "pnpm test && pnpm build",
+    "scratch": "pnpm load test/scratch.ts",
+    "load": "tsx --tsconfig test/tsconfig.json",
+    "test": "pnpm tsc && pnpm load test/tape.ts"
+  },
+  "dependencies": {
+    "@cmdcode/buff": "^2.2.3",
+    "@cmdcode/crypto-tools": "^2.6.3",
+    "@cmdcode/musig2": "^2.4.1",
+    "@scrow/tapscript": "^2.2.0",
+    "@scure/bip39": "^1.2.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@types/node": "^20.9.4",
+    "@types/tape": "^5.6.4",
+    "rollup": "^4.5.1",
+    "tape": "^5.7.2",
+    "tslib": "^2.6.2",
+    "tsx": "^4.3.0",
+    "typescript": "^5.3.2"
+  }
+}
