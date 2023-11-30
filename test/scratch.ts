@@ -1,4 +1,3 @@
-
 const content = {
   endpoint: "https://example.api/chat/",
   status: "UP",
